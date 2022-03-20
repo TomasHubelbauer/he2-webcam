@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>He3 Face Camera</title>
+    <script>
+      void async function () {
+        const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+        /** @type {HTMLVideoElement} */
+        const video = document.querySelector('video');
+        video.srcObject = mediaStream;
+      }()
+    </script>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      video {
+        object-fit: fill;
+        height: 100vh;
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay></video>
+  </body>
+</html>
